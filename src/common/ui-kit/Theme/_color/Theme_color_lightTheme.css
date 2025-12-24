@@ -1,0 +1,163 @@
+/* Base color of the content, from which the colors of text, icons, ... */ /* Base color of surfaces are built */ /* Design color, from which accent states are built */ /* Tinting color, from which borders, overlays are built modal windows, ... */ /* The color of links and controls, buttons from which all their states are built */ /* System color */ /* Additional variable on which the colors of controls depend */ /* Neutral color */ /* Success color */ /* Error color */ /* Warning color */ /* Caution color */ /* Shadow color */
+
+/* stylelint-disable */
+.Theme_color_gpnDefault {
+  /* Primary colors */
+  --color-base-path-blue-8: rgb(94, 103, 133);
+  --color-base-path-blue-7: rgb(130, 135, 151);
+  --color-base-path-blue-6: rgb(167, 168, 170);
+  --color-base-path-blue-5: rgb(191, 191, 191);
+  --color-base-path-blue-4: rgb(218, 219, 220);
+  --color-base-path-blue-3: rgb(247, 247, 248);
+  --color-base-path-blue-2: rgb(255, 255, 255);
+  --color-base-path-blue-1: rgb(255, 255, 255);
+
+  --color-base-base-grey-9: rgb(23, 29, 69);
+  --color-base-base-grey-8: rgb(29, 37, 88);
+  --color-base-base-grey-7: rgb(48, 61, 145);
+  --color-base-base-grey-6: rgb(75, 91, 195);
+  --color-base-base-grey-5: rgb(133, 143, 214);
+  --color-base-base-grey-4: rgb(190, 196, 233);
+  --color-base-base-grey-3: rgb(209, 213, 240);
+  --color-base-base-grey-2: rgb(228, 231, 246);
+  --color-base-base-grey-1: rgb(240, 241, 250);
+
+  --color-base-error-magenta-8: rgb(227, 49, 49);
+  --color-base-error-magenta-7: rgb(225, 101, 96);
+  --color-base-error-magenta-6: rgb(227, 151, 146);
+  --color-base-error-magenta-5: rgb(226, 196, 193);
+  --color-base-error-magenta-4: rgb(239, 227, 225);
+  --color-base-error-magenta-3: rgb(255, 255, 255);
+  --color-base-error-magenta-2: rgb(255, 255, 255);
+  --color-base-error-magenta-1: rgb(255, 255, 255);
+
+  --color-bg-accent: rgb(249 248 255);
+  /* //////////////////////////////
+    // Background colors /////////////// */
+  /*--color-bg-default: color($color-base-essential a(100%)); !* Default color *!*/
+  /*--color-bg-secondary: color($color-base-project s(-75) l(+59)); !* Default color *!*/
+  --color-bg-default: rgb(255, 255, 255); /* Default color */
+  --color-bg-secondary: rgb(242, 242, 242); /* Additional background color */
+
+  --color-bg-brand: rgb(42, 53, 108); /* Background color is branded */
+  --color-bg-link: rgb(94, 103, 133); /* Link background color */
+  --color-bg-border: rgba(206, 213, 233, 1); /* Border color */
+
+  /*--color-bg-stripe: color($color-base-phantom l(-11) a(5%)); !* Zebra color (for example, when coloring the background of table rows one at a time) *!*/
+  --color-bg-stripe: rgba(
+    37,
+    47,
+    95,
+    0.06
+  ); /* Zebra color (for example, when coloring the background of table rows one at a time) */
+
+  /*--color-bg-ghost: color($color-base-phantom l(-11) a(8%)); !* Shading color *!*/
+  /*--color-bg-tone: color($color-base-phantom l(-11) a(85%)); !* Burqa color *!*/
+  /*--color-bg-soft: color($color-base-essential a(90%)); !* Milk color *!*/
+  --color-bg-ghost: rgba(37, 47, 95, 0.1); /* Shading color */
+  --color-bg-tone: rgba(0, 0, 0, 0.85); /* Burqa color */
+  --color-bg-soft: rgba(255, 255, 255, 0.9); /* Milk color */
+
+  --color-bg-system: rgb(244, 245, 248); /* System background color */
+  --color-bg-normal: rgb(199, 250, 246); /* Background color is neutral */
+  --color-bg-success: rgb(237, 247, 237); /* Success background color */
+  --color-bg-caution: rgb(217, 165, 76); /* Caution background color */
+  --color-bg-warning: rgb(255, 254, 245); /* Warning background color */
+  --color-bg-error: rgb(228, 215, 219); /* Error background color */
+  --color-bg-critical: rgb(69, 50, 26); /* System background color */
+
+  /* //////////////////////////////
+    // Text colors ////////////// */
+  --color-typo-primary: rgba(76, 62, 105, 1); /* Body text color */
+  --color-typo-secondary: rgb(112, 111, 148); /* Background text color */
+  --color-typo-dark: rgba(46, 55, 80, 1); /* Dark text color */
+  --color-typo-brand: rgba(46, 55, 80, 1); /* Dark text color */
+  --color-typo-ghost: rgba(23, 29, 69, 0.3); /* Additional text color */
+  --color-typo-system: rgb(158, 158, 158); /* System text color */
+  --color-typo-normal: rgb(17, 65, 75); /* Text color is neutral */
+  --color-typo-success: rgb(32, 84, 85); /* Success text color */
+  --color-typo-caution: rgb(216, 120, 24); /* Caution text color */
+  --color-typo-warning: rgb(172, 150, 62); /* Warning text color */
+  --color-typo-error: rgb(215, 25, 25); /* Error text color */
+  --color-typo-critical: rgb(69, 50, 26); /* System background color */
+  --color-typo-link: rgb(94, 103, 133); /* Main link color */
+  --color-typo-link-minor: rgb(89, 89, 89); /* Secondary link color */
+  --color-typo-link-hover: rgb(115, 124, 156); /* Link hover color */
+  --color-nums-shadow: 0, 32, 51; /* RGB values ​​for specifying shadows in the rgba(R,G,B, alpha) construct */
+  --color-typo-white: rgb(255, 255, 255); /* Body text color */
+
+  /* //////////////////////////////
+    // Scrollbar colors ////////////// */
+  --color-scroll-bg: rgba(37, 47, 95, 0.06);
+  --color-scroll-thumb: rgba(37, 47, 95, 0.24);
+  --color-scroll-thumb-hover: rgba(37, 47, 95, 0.32);
+
+  /* /////////////////////////////
+    // Control colors /////////// */
+
+  /* Default */
+  --color-control-bg-default: rgb(255, 255, 255); /* Control background color */
+  --color-control-typo-default: rgb(23, 29, 69); /* Color of the main text of the control */
+  --color-control-typo-placeholder: rgba(23, 29, 69, 0.35); /* Placeholder control color */
+  --color-control-bg-border-default: rgba(206, 213, 233, 1); /* Background color of control borders */
+  --color-control-bg-border-default-hover: rgb(166, 175, 198); /* Background color of hover control borders */
+  --color-control-bg-border-focus: rgb(
+    118,
+    127,
+    158
+  ); /* Outline color of controls when focused */ /* TODO replaced with the entire rule */
+  --color-control-bg-focus: rgba(94, 103, 133, 0.3); /* Shadow color when in focus */
+  --color-control-bg-active: rgba(94, 103, 133, 0.5); /* Shadow color when pressed */
+
+  /* Primary */
+  --color-control-bg-primary: rgb(76, 62, 105); /* Background color of the active control */
+  --color-control-bg-primary-hover: rgb(47, 64, 133); /* Background color of active hover control */
+  --color-control-bg-primary-focus: rgb(47, 64, 133); /* Background color of active hover control */
+  --color-control-typo-primary: rgb(255, 255, 255); /* Accent text color */
+  --color-control-typo-primary-hover: rgb(255, 255, 255); /* Accent text color */
+
+  /* Secondary */
+  --color-control-bg-secondary: rgb(255, 255, 255); /* Background color of control borders */
+  --color-control-bg-secondary-focus: rgb(238, 221, 175);
+  --color-control-bg-border-secondary: rgb(94, 103, 133); /* Background color of control borders */
+  --color-control-bg-border-secondary-hover: rgb(118, 127, 158); /* Background color of hover control borders */
+  --color-control-bg-border-secondary-focus: rgb(217, 165, 76); /* Background color of focus control borders */
+  --color-control-typo-secondary: rgb(94, 103, 133); /* Color of the control's secondary text */
+  --color-control-typo-secondary-hover: rgb(66, 78, 128); /* Accent text color */
+  --color-control-typo-secondary-focus: rgb(9, 11, 31); /* Focus accent color */
+  --color-control-typo-secondary-hover-shadow: rgb(230, 230, 230); /* Shadow hover color */
+
+  /* Ghost */
+  --color-control-bg-ghost: rgba(37, 47, 95, 0.07); /* Background color of the additional control */
+  --color-control-bg-ghost-hover: rgba(37, 47, 95, 0.05); /* Background color of the additional hover control */
+  --color-control-bg-ghost-focus: rgb(249, 234, 205); /* Background color of additional focus control */
+  --color-control-typo-ghost: rgba(33, 41, 99, 0.8); /* Color of additional control text */
+  --color-control-typo-ghost-hover: rgb(9, 11, 31); /* Accent text color */
+
+  /* Clear */
+  --color-control-bg-clear: rgba(37, 47, 95, 0); /* Background color of the pure control */
+  --color-control-bg-clear-hover: rgba(37, 47, 95, 0.05); /* Background color of pure hover control */
+  --color-control-typo-clear: rgba(33, 41, 99, 0.8); /* Accent text color */
+  --color-control-typo-clear-hover: rgba(33, 41, 99, 0.75); /* Accent text color */
+
+  /* Link */
+  --color-control-bg-link: rgba(37, 47, 95, 0); /* Background color of the pure control */
+  --color-control-bg-clear-link: rgba(37, 47, 95, 0.05); /* Background color of pure hover control */
+  --color-control-typo-link: rgba(33, 41, 99, 0.8); /* Accent text color */
+  --color-control-typo-link-hover: rgba(33, 41, 99, 0.75); /* Accent text color */
+
+  /* Disable */
+  --color-control-bg-disable: rgb(255, 255, 255); /* Background color of inactive control */
+  --color-control-bg-border-disable: rgb(230, 230, 230); /* Background color of inactive control borders */
+  --color-control-typo-disable: rgb(179, 179, 179); /* Color of the main text of an inactive control */
+
+  /* /////////////////////////////
+    // Shadow colors /////////// */
+  --color-shadow-group-1: rgba(0, 32, 51, 0.02);
+  --color-shadow-group-2: rgba(0, 32, 51, 0.16);
+  --color-shadow-layer-1: rgba(0, 32, 51, 0.04);
+  --color-shadow-layer-2: rgba(0, 32, 51, 0.12);
+  --color-shadow-modal-1: rgba(0, 32, 51, 0.04);
+  --color-shadow-modal-2: rgba(0, 32, 51, 0.12);
+}
+/* stylelint-enable */

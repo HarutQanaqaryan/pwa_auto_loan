@@ -1,0 +1,8 @@
+node_modules
+dist
+
+### VS Code ###
+.vscode/
+
+.env.local
+yarn-error.log

@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: front-app-config
+  namespace: services
+  uid: cb18aa9a-f139-40bc-ae92-689df9b28be8
+  resourceVersion: '58530348'
+  creationTimestamp: '2025-05-13T19:34:47Z'
+  labels:
+    k8slens-edit-resource-version: v1
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"v1","data":{"appApiHost":"https://api.dev.platform.enfint.ai","authProviderUrl":"https://keycloak.dev.platform.enfint.ai/realms/credit-conveyor","clientId":"front-app","configMode":"static","locale":"en-us","logo":"assets/logo.png"},"kind":"ConfigMap","metadata":{"annotations":{},"name":"front-app-config","namespace":"services"}}
+  selfLink: /api/v1/namespaces/services/configmaps/front-app-config
+spec: {}
+data:
+  appApiHost: https://api.dev.platform.enfint.ai
+  authProviderUrl: https://keycloak.dev.platform.enfint.ai/realms/credit-conveyor
+  availableLocales: en-us ru
+  clientId: front-app
+  configMode: static
+  locale: en-us
+  logo: assets/logo.png

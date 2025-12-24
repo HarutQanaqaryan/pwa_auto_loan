@@ -1,0 +1,361 @@
+:root {
+  --main-black: #2C2C2C;
+  --main-white: #ffffff;
+
+  --green-1: #72931D;
+  --green-2: #aad331;
+  --green-3: #f6fbea;
+  --green-4: #F3F8DE;
+
+  --gray-1: #717D7D;
+  --gray-2: #B8BCBD;
+  --gray-3: #F2F2F2;
+  --gray-4: #F2F3EE;
+
+  --status-success-1: #09874a;
+  --status-success-2: #6BC368;
+  --status-success-3: #E6FCE8;
+
+  --status-error-1: #870944;
+  --status-error-2: #E6406D;
+  --status-error-3: #FFE1EF;
+
+  --status-revision-1: #9d5f26;
+  --status-revision-2: #FFBE56;
+  --status-revision-3: #FFEADE;
+
+  --status-underwriting-1: #1A61A3;
+  --status-underwriting-2: #E4EFFF;
+
+  --status-processing-1: #1A7CA3;
+  --status-processing-2: #D7F8FC;
+
+  --control-bg-primary-hover: #9fc72c;
+  --control-bg-primary-focus: #85aa1c;
+
+  --control-typo-secondary-focus: #526c0d;
+  --control-typo-tertiary-focus: #526C0D;
+
+  --transparent: #00000000;
+}
+
+
+.Theme_color_gpnGreen {
+
+  --color-base-path-blue-8: rgb(94, 103, 133);
+
+  --color-base-path-blue-7: rgb(130, 135, 151);
+
+  --color-base-path-blue-6: rgb(167, 168, 170);
+
+  --color-base-path-blue-5: rgb(191, 191, 191);
+
+  --color-base-path-blue-4: rgb(218, 219, 220);
+
+  --color-base-path-blue-3: rgb(247, 247, 248);
+
+  --color-base-path-blue-2: rgb(255, 255, 255);
+
+  --color-base-path-blue-1: rgb(255, 255, 255);
+
+
+  --color-base-base-grey-9: rgb(23, 29, 69);
+
+  --color-base-base-grey-8: rgb(29, 37, 88);
+
+  --color-base-base-grey-7: rgb(48, 61, 145);
+
+  --color-base-base-grey-6: rgb(75, 91, 195);
+
+  --color-base-base-grey-5: rgb(133, 143, 214);
+
+  --color-base-base-grey-4: rgb(190, 196, 233);
+
+  --color-base-base-grey-3: rgb(209, 213, 240);
+
+  --color-base-base-grey-2: rgb(228, 231, 246);
+
+  --color-base-base-grey-1: rgb(240, 241, 250);
+
+
+  --color-base-error-magenta-8: rgb(227, 49, 49);
+
+  --color-base-error-magenta-7: rgb(225, 101, 96);
+
+  --color-base-error-magenta-6: rgb(227, 151, 146);
+
+  --color-base-error-magenta-5: rgb(226, 196, 193);
+
+  --color-base-error-magenta-4: rgb(239, 227, 225);
+
+  --color-base-error-magenta-3: rgb(255, 255, 255);
+
+  --color-base-error-magenta-2: rgb(255, 255, 255);
+
+  --color-base-error-magenta-1: rgb(255, 255, 255);
+
+  --color-base-essential: rgb(255, 255, 255);
+
+
+
+  --color-bg-accent: rgb(249 248 255);
+  /* //////////////////////////////
+      // Background colors /////////////// */
+  /*--color-bg-default: color($color-base-essential a(100%)); !* Default color *!*/
+  /*--color-bg-secondary: color($color-base-project s(-75) l(+59)); !* Default color *!*/
+
+  --color-bg-default: var(--gray-4);
+
+  --color-bg-secondary: rgb(242, 242, 242);
+
+
+  --color-bg-brand: var(--green-2);
+
+  --color-bg-spin: var(--green-1);
+
+  --color-bg-link: rgb(94, 103, 133);
+
+  --color-bg-border: var(--gray-2);
+
+
+  /*--color-bg-stripe: color($color-base-phantom l(-11) a(5%)); !* Zebra color (for example, when coloring the background of table rows one at a time) *!*/
+
+  --color-bg-stripe: rgba(37, 47, 95, 0.06);
+
+
+  /*--color-bg-ghost: color($color-base-phantom l(-11) a(8%)); !* Shading color *!*/
+  /*--color-bg-tone: color($color-base-phantom l(-11) a(85%)); !* Burqa color *!*/
+  /*--color-bg-soft: color($color-base-essential a(90%)); !* Milk color *!*/
+
+  --color-bg-ghost: rgba(37, 47, 95, 0.1);
+
+  --color-bg-tone: rgba(0, 0, 0, 0.85);
+
+  --color-bg-soft: rgba(255, 255, 255, 0.9);
+
+
+  --color-bg-system: rgb(244, 245, 248);
+
+  --color-bg-normal: rgb(199, 250, 246);
+
+  --color-bg-success: rgb(237, 247, 237);
+
+  --color-bg-caution: rgb(217, 165, 76);
+
+  --color-bg-warning: rgb(255, 254, 245);
+
+  --color-bg-error: rgb(228, 215, 219);
+
+  --color-bg-critical: rgb(69, 50, 26);
+
+
+  /* //////////////////////////////
+      // Text colors ////////////// */
+  --color-typo-primary: var(--main-black);
+
+  --color-typo-secondary: var(--gray-1);
+
+  --color-typo-dark: var(--gray-1);
+
+  --color-typo-brand: var(--status-success-1);
+
+  --color-typo-ghost: rgba(23, 29, 69, 0.3);
+
+  --color-typo-system: rgb(158, 158, 158);
+
+  --color-typo-normal: var(--main-black);
+
+  --color-typo-success: var(--status-success-2);
+
+  --color-typo-caution: var(--status-revision-2);
+
+  --color-typo-warning: rgb(172, 150, 62);
+
+  --color-typo-error: var(--status-error-2);
+
+
+  --color-typo-critical: rgb(69, 50, 26);
+
+  --color-typo-link: var(--green-1);
+
+  --color-typo-link-minor: rgb(89, 89, 89);
+
+  --color-typo-link-hover: rgb(115, 124, 156);
+
+  --color-nums-shadow: 0, 32, 51;
+
+  --color-typo-white: rgb(255, 255, 255);
+
+
+  /* //////////////////////////////
+      // Scrollbar colors ////////////// */
+
+  --color-scroll-bg: rgba(37, 47, 95, 0.06);
+
+  --color-scroll-thumb: rgba(37, 47, 95, 0.24);
+
+  --color-scroll-thumb-hover: rgba(37, 47, 95, 0.32);
+
+
+  /* /////////////////////////////
+      // Control colors /////////// */
+
+  --control-typo-label: var(--gray-1);
+
+  --color-control-bg-default: var(--main-white);
+
+  --color-control-typo-default: var(--main-black);
+
+  --color-control-typo-placeholder: var(--gray-1);
+
+
+  --color-control-bg-border-default: var(--gray-2);
+
+  --color-control-bg-border-default-hover: var(--gray-1);
+
+  --color-control-bg-border-focus: var(--main-black);
+
+
+
+  --color-control-bg-focus: rgba(94, 103, 133, 0.3);
+
+  --color-control-bg-active: rgba(94, 103, 133, 0.5);
+
+
+
+  --color-control-bg-primary: var(--green-2);
+
+  --color-control-bg-primary-hover: var(--control-bg-primary-hover);
+
+  --color-control-bg-primary-focus: var(--control-bg-primary-focus);
+
+
+  --color-control-typo-primary: var(--main-black);
+
+  --color-control-typo-primary-hover: var(--main-black);
+
+
+
+
+  --color-control-bg-secondary: var(--gray-3);
+
+  --color-control-bg-secondary-hover: var(--green-4);
+
+  --color-control-bg-secondary-focus: var(--green-4);
+
+
+  --color-control-bg-border-secondary: var(--gray-2);
+
+  --color-control-bg-border-secondary-hover: var(--green-2);
+
+  --color-control-bg-border-secondary-focus: var(--green-2);
+
+
+  --color-control-typo-secondary: var(--main-black);
+
+  --color-control-typo-secondary-hover: var(--green-1);
+
+  --color-control-typo-secondary-focus: var(--control-typo-secondary-focus);
+
+  --color-control-typo-secondary-hover-shadow: rgba(230, 230, 230, 0);
+
+
+
+  --color-control-bg-tertiary: var(--transparent);
+
+  --color-control-bg-tertiary-hover: var(--green-4);
+
+  --color-control-bg-tertiary-focus: var(--green-4);
+
+  --color-control-bg-tertiary-disable: var(--transparent);
+
+
+  --color-control-bg-border-tertiary: var(--transparent);
+
+  --color-control-bg-border-tertiary-hover: var(--green-2);
+
+  --color-control-bg-border-tertiary-focus: var(--green-2);
+
+
+  --color-control-typo-tertiary: var(--green-1);
+
+  --color-control-typo-tertiary-hover: var(--green-1);
+
+  --color-control-typo-tertiary-focus: var(--control-typo-tertiary-focus);
+
+  --color-control-typo-tertiary-disable: var(--gray-1);
+
+  --color-control-typo-tertiary-hover-shadow: rgba(230, 230, 230, 0);
+
+
+
+
+  --color-control-bg-ghost: rgba(37, 47, 95, 0.07);
+
+  --color-control-bg-ghost-hover: rgba(37, 47, 95, 0.05);
+
+  --color-control-bg-ghost-focus: rgb(249, 234, 205);
+
+  --color-control-typo-ghost: var(--gray-1);
+
+  --color-control-typo-ghost-hover: var(--gray-2);
+
+
+
+  --color-control-bg-clear: rgba(37, 47, 95, 0);
+
+  --color-control-bg-clear-hover: rgba(37, 47, 95, 0.05);
+
+  --color-control-typo-clear: var(--gray-1);
+
+  --color-control-typo-clear-hover: var(--gray-2);
+
+
+
+  --color-control-bg-link: rgba(37, 47, 95, 0);
+
+  --color-control-bg-clear-link: rgba(37, 47, 95, 0.05);
+
+  --color-control-typo-link: var(--main-black);
+
+  --color-control-typo-link-focus: var(--gray-1);
+
+  --color-control-typo-link-hover: var(--green-1);
+
+
+
+
+  --color-control-bg-disable: var(--gray-3);
+
+  --color-control-bg-border-disable: var(--gray-2);
+
+  --color-control-typo-disable: var(--gray-1);
+
+
+
+  --color-control-radio-bg: var(--gray-1);
+
+  --color-control-radio-bg-hover: var(--green-2);
+
+  --color-control-radio-bg-checked: var(--green-2);
+
+  --color-control-radio-bg-pressed: var(--green-1);
+
+  --color-control-radio-bg-disable: var(--gray-1);
+
+
+  /* /////////////////////////////
+      // Shadow colors /////////// */
+
+  --color-shadow-group-1: rgba(0, 32, 51, 0.02);
+
+  --color-shadow-group-2: rgba(0, 32, 51, 0.16);
+
+  --color-shadow-layer-1: rgba(0, 32, 51, 0.04);
+
+  --color-shadow-layer-2: rgba(0, 32, 51, 0.12);
+
+  --color-shadow-modal-1: rgba(0, 32, 51, 0.04);
+
+  --color-shadow-modal-2: rgba(0, 32, 51, 0.12);
+}

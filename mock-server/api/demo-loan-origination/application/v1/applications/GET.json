@@ -1,0 +1,29 @@
+[
+  {
+    "id": "42424242",
+    "regDate": "Wed Apr 16 2025 16:56:39 GMT+0300",
+    "participants": [],
+    "status": "new",
+    "comment": "string",
+    "product": "string",
+    "creditLimit": "1000"
+  },
+  {
+    "id": "43434343",
+    "regDate": "Wed Apr 16 2025 16:56:39 GMT+0300",
+    "participants": [],
+    "status": "approve",
+    "comment": "string",
+    "product": "string",
+    "creditLimit": "1000"
+  },
+  {
+    "id": "44444444",
+    "regDate": "Wed Apr 16 2025 16:56:39 GMT+0300",
+    "participants": [],
+    "status": "reject",
+    "comment": "string",
+    "product": "string",
+    "creditLimit": "1000"
+  }
+]

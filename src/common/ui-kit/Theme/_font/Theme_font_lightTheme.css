@@ -1,0 +1,56 @@
+/* Regular 400 */
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-Regular.woff2') format('woff2'), url('Roboto-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-Regular.woff2') format('woff2'), url('Roboto-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Medium 500 */
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-Medium.woff2') format('woff2'), url('Roboto-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Bold 700 */
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-Bold.woff2') format('woff2'), url('Roboto-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-Bold.woff2') format('woff2'), url('Roboto-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Black 900 */
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-Black.woff2') format('woff2'), url('Roboto-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+.Theme_font_lightTheme {
+  --font-primary: 'Roboto', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: var(--font-primary);
+}

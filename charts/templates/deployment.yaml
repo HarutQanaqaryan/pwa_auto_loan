@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ .Release.Name }}
+    k8s-app: {{ .Release.Name }}
+    app.kubernetes.io/component: {{ .Release.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+  name: {{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      k8s-app: {{ .Release.Name }}
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        k8s-app: {{ .Release.Name }}
+        app.kubernetes.io/component: {{ .Release.Name }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+      annotations:
+        releaseTime: {{ dateInZone "2006-01-02 15:04:05Z" (now) "Europe/Moscow"| quote }}
+    spec:
+      imagePullSecrets:
+        - name: docker-secret-front-app
+      volumes:
+        - name: front-app-config
+          configMap:
+            name: front-app-config
+        - name: front-app-locales
+          configMap:
+            name: front-app-locales
+            defaultMode: 420
+        - name: shared
+          emptyDir: {}
+      initContainers:
+        - name: init-locales
+          image: busybox:1.28
+          command:
+            - sh
+            - "-c"
+            - >-
+              cp -rL /custome/locales.zip /shared && cd /shared && unzip
+              locales.zip && rm -rf locales.zip
+          resources: {}
+          volumeMounts:
+            - name: shared
+              mountPath: /shared
+            - name: front-app-locales
+              mountPath: /custome
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+      containers:
+        - image: {{ .Values.image }}
+          imagePullPolicy: Always
+          name: {{ .Release.Name }}
+          ports:
+            - containerPort: 80
+          # command: [ "/bin/bash", "-c", "--" ]
+          # args: [ "while true; do sleep 30; done;" ]
+          volumeMounts:
+            - name: front-app-config
+              mountPath: /usr/share/nginx/html/config.js
+              subPath: config.js
+            - name: shared
+              mountPath: /usr/share/nginx/html/locales/

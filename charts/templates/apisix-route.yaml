@@ -1,0 +1,27 @@
+---
+apiVersion: apisix.apache.org/v2
+kind: ApisixRoute
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  http:
+    - name: {{ .Release.Name }}
+      match:
+        hosts:
+          - "{{ .Values.domain_name }}"
+        paths:
+          - "/*"
+      backends:
+        - serviceName: {{ .Release.Name }}
+          servicePort: 80
+      plugins:
+        - config:
+            regex_uri:
+              - ^/callback
+              - /
+          enable: true
+          name: redirect
+        - name: redirect
+          enable: true
+          config:
+            http_to_https: true

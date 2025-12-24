@@ -1,0 +1,29 @@
+.Theme_size_lightTheme {
+  /* Text size */
+  --size-text-2xs: 8px;
+  --size-text-xs: 10px;
+  --size-text-s: 12px;
+  --size-text-m: 14px;
+  --size-text-l: 16px;
+  --size-text-xl: 20px;
+  --size-text-2xl: 24px;
+  --size-text-3xl: 32px;
+  --size-text-4xl: 40px;
+  --size-text-5xl: 48px;
+  --size-text-6xl: 56px;
+  --size-text-7xl: 96px;
+
+  /* Line spacing */
+  --line-height-text-3xs: 1.1em;
+  --line-height-text-2xs: 1.2em;
+  --line-height-text-xs: 1.3em;
+  --line-height-text-s: 1.4em;
+  --line-height-text-m: 1.5em;
+  --line-height-text-l: 1.6em;
+
+  /* Font width */
+  --font-weight-text-light: 300;
+  --font-weight-text-regular: 400;
+  --font-weight-text-medium: 500;
+  --font-weight-text-bold: 700;
+}

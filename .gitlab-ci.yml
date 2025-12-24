@@ -1,0 +1,8 @@
+include:
+  - project: "enfint-foundation/devops/ci-pipelines"
+    file: "pwa-service.yml"
+    ref: "main"
+
+variables:
+  NAMESPACE: services
+  HUSKY: 0
