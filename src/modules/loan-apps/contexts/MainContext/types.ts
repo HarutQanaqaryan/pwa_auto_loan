@@ -4,9 +4,14 @@ import type { Dispatch, SetStateAction } from "react";
 export enum CreditApplicationStatusType {
   SUBMITTED = "SUBMITTED",
   DRAFT = "DRAFT",
-  UNDER_REVIEW = "UNDER_REVIEW",
-  PROPOSALS_READY = "PROPOSALS_READY",
-  READY_FOR_SIGNATURE = "READY_FOR_SIGNATURE",
+  IN_PROGRESS = "IN_PROGRESS",
+  WAIT_PROPOSAL_ACCEPT = "WAIT_PROPOSAL_ACCEPT",
+  WAIT_CARINFO = "WAIT_CARINFO",
+  WAIT_FINAL_ACCEPT = "WAIT_FINAL_ACCEPT",
+  WAIT_SIGN = "WAIT_SIGN",
+  WAIT_PLEDGE = "WAIT_PLEDGE",
+  SUCCESS = "SUCCESS",
+  REJECT = "REJECT",
 }
 export interface MainContextType {
   currentLoan: LoanParamsType;
@@ -42,11 +47,6 @@ export interface LoanParamsType {
       workExperience: number;
       monthlyIncome: number;
     };
-    carInfo?: {
-      vin: number;
-    };
-    agree?: boolean;
-    selectedProposal?: ProposalType;
     status?: CreditApplicationStatusType;
   };
   applicationId?: string;

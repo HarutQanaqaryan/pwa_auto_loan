@@ -39,12 +39,17 @@ export const ApplicationItem = ({ loan }: { loan: LoanParamsType; index: number 
       case CreditApplicationStatusType.DRAFT:
         navigate("/loan-apps/new");
         break;
-      case CreditApplicationStatusType.PROPOSALS_READY:
+      case CreditApplicationStatusType.WAIT_PROPOSAL_ACCEPT:
         navigate(`/loan-apps/proposals/${loan?.applicationId}`);
         break;
-      case CreditApplicationStatusType.READY_FOR_SIGNATURE:
+      case CreditApplicationStatusType.WAIT_FINAL_ACCEPT:
         navigate(`/loan-apps/accept-loan/${loan?.applicationId}`);
         break;
+      case CreditApplicationStatusType.WAIT_CARINFO:
+        navigate(`/loan-apps/${loan?.applicationId}/car-info`);
+        break;
+      case CreditApplicationStatusType.WAIT_SIGN:
+        navigate(`/loan-apps/sign-documents/${loan?.applicationId}`);
     }
   };
 
@@ -62,7 +67,7 @@ export const ApplicationItem = ({ loan }: { loan: LoanParamsType; index: number 
           <AppInfo loan={loan} />
         </StyledCard>
       );
-    case CreditApplicationStatusType.PROPOSALS_READY:
+    case CreditApplicationStatusType.WAIT_PROPOSAL_ACCEPT:
       return (
         <StyledCard actions={[<Button onClick={onSetCurrentLoan}>{translate("go_to_proposals")}</Button>]}>
           <Title level={4} style={{ margin: 0 }}>
@@ -73,12 +78,34 @@ export const ApplicationItem = ({ loan }: { loan: LoanParamsType; index: number 
           <AppInfo loan={loan} />
         </StyledCard>
       );
-    case CreditApplicationStatusType.READY_FOR_SIGNATURE:
+    case CreditApplicationStatusType.WAIT_FINAL_ACCEPT:
+      return (
+        <StyledCard actions={[<Button onClick={onSetCurrentLoan}>{translate("go_to")}</Button>]}>
+          <Title level={4} style={{ margin: 0 }}>
+            <StyledTag color={"purple"}>
+              <SignatureOutlined /> {translate("bank_waiting_consent")}
+            </StyledTag>
+          </Title>
+          <AppInfo loan={loan} />
+        </StyledCard>
+      );
+    case CreditApplicationStatusType.WAIT_SIGN:
       return (
         <StyledCard actions={[<Button onClick={onSetCurrentLoan}>{translate("go_to_signing")}</Button>]}>
           <Title level={4} style={{ margin: 0 }}>
             <StyledTag color={"green"}>
               <SignatureOutlined /> {translate("ready_for_signature")}
+            </StyledTag>
+          </Title>
+          <AppInfo loan={loan} />
+        </StyledCard>
+      );
+    case CreditApplicationStatusType.WAIT_CARINFO:
+      return (
+        <StyledCard actions={[<Button onClick={onSetCurrentLoan}>{translate("fill")}</Button>]}>
+          <Title level={4} style={{ margin: 0 }}>
+            <StyledTag color={"red"}>
+              <SignatureOutlined /> {translate("carinfo_status")}
             </StyledTag>
           </Title>
           <AppInfo loan={loan} />

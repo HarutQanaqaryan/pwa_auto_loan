@@ -369,5 +369,9 @@
   "proposal.approvedRepaymentPeriod": "Срок погашения",
   "proposal.proposalPeriod": "Срок действия предложения",
   "proposal.proposalDate": "Дата предложения",
-  "proposal.period.months": "мес."
+  "proposal.period.months": "мес.",
+  "carinfo_status": "Заполните информацию об автомобиле",
+  "fill": "Заполнить",
+  "go_to": "Перейти",
+  "bank_waiting_consent": "Банк ожидает согласия"
 }

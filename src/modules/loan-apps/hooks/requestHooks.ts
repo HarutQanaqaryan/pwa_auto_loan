@@ -92,7 +92,7 @@ export const useGetProposals = (id?: string) => {
     },
   );
 
-  return { isLoading, isSuccess, data };
+  return { isLoading, isSuccess, data: Array.isArray(data) ? data : [] };
 };
 
 export const usePostEvent = () => {

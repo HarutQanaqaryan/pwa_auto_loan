@@ -24,10 +24,6 @@ export const CarInfo = () => {
     }
   }, [carPrice, form]);
 
-  useEffect(() => {
-    form.setFieldsValue(loanParams?.data?.carInfo);
-  }, [form, loanParams?.data?.carInfo]);
-
   const sendCarInfo = (params: CarInfoDataType) => {
     if (loanParams?.applicationId) {
       const applicationId = loanParams?.applicationId;

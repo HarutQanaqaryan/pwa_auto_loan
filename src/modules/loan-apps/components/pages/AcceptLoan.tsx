@@ -1,19 +1,36 @@
-import { useState } from "react";
-import { Card, Typography, Checkbox, Button, Alert } from "antd";
-import { useMainContext } from "../../contexts";
+import { Card, Typography, Button, Descriptions } from "antd";
+import { EventType, useMainContext } from "../../contexts";
 import { ActionsWrapper } from "../ActionsWrapper";
 import { useTranslate } from "@common/hooks";
 import { useNavigate } from "react-router-dom";
+import { usePostEvent } from "../../hooks";
+import { ProposalType } from "modules/loan-apps/types";
 
 const { Title } = Typography;
 
 export const AcceptLoan = () => {
-  const { translate } = useTranslate();
+  const { translate, formatNumber } = useTranslate();
   const { currentLoan } = useMainContext();
-  const [agreed, setAgreed] = useState(currentLoan.data?.agree ?? false);
   const navigate = useNavigate();
+  const { postEvent } = usePostEvent();
 
-  const proposal = currentLoan?.data?.selectedProposal;
+  const proposal = {} as ProposalType;
+
+  const onSendDecision = () => {
+    if (!currentLoan?.applicationId) {
+      return;
+    }
+    postEvent(
+      {
+        id: currentLoan?.applicationId,
+        type: EventType.USER_ACCEPT2,
+        result: "OK",
+      },
+      {
+        onSuccess: () => navigate("/loan-apps"),
+      },
+    );
+  };
 
   return (
     <Card title={translate("step7.title")}>
@@ -21,39 +38,20 @@ export const AcceptLoan = () => {
         {translate("step7.review")}
       </Title>
 
-      {/* <Descriptions bordered column={1} style={{ marginBottom: 24 }}>
+      <Descriptions bordered column={1} style={{ marginBottom: 24 }}>
         <Descriptions.Item label={translate("step7.loanAmount")}>
-          {formatNumber(proposal?. || 0)} ₽
+          {formatNumber(proposal?.approvedSum || 0)} ₽
         </Descriptions.Item>
-        <Descriptions.Item label={translate("step7.interestRate")}>{proposal?.interest} %</Descriptions.Item>
+        <Descriptions.Item label={translate("step7.interestRate")}>
+          {proposal?.approvedInterestRate ?? 0} %
+        </Descriptions.Item>
         <Descriptions.Item label={translate("step7.term")}>
-          {proposal?.} {translate("step7.term").toLowerCase().includes("term") ? "months" : "месяцев"}
+          {proposal?.proposalPeriod ?? 0} {translate("step7.term").toLowerCase().includes("term") ? "months" : "мес."}
         </Descriptions.Item>
-        <Descriptions.Item label={translate("step7.monthlyPayment")}>
-          {formatNumber(proposal?.proposalPeriod || 0)} ₽
-        </Descriptions.Item>
-        <Descriptions.Item label={translate("step7.car")}>
-          Toyota Camry ({translate("step7.vin")}-{currentLoan?.data?.carInfo?.vin})
-        </Descriptions.Item>
-      </Descriptions> */}
-
-      <Alert
-        message={translate("step7.termsTitle")}
-        description={translate("step7.termsDescription", { payment: proposal?.approvedSum })}
-        type="info"
-        style={{ marginBottom: 24 }}
-      />
-
-      <Checkbox checked={agreed} onChange={(e) => setAgreed(e.target.checked)} style={{ marginBottom: 24 }}>
-        {translate("step7.agree")}
-      </Checkbox>
+      </Descriptions>
 
       <ActionsWrapper>
-        <Button
-          type="primary"
-          disabled={!agreed}
-          onClick={() => navigate(`/loan-apps/sign-documents/${currentLoan.applicationId}`)}
-        >
+        <Button type="primary" onClick={onSendDecision}>
           {translate("step7.accept")}
         </Button>
       </ActionsWrapper>

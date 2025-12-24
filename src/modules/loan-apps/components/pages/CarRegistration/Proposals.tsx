@@ -1,4 +1,4 @@
-import { Card, List, Typography, Space, Tag, Button, Select } from "antd";
+import { Card, List, Typography, Space, Tag, Button, Select, notification } from "antd";
 import { EventType, useMainContext } from "../../../contexts";
 import { useTranslate } from "@common/hooks";
 import { ActionsWrapper } from "../../ActionsWrapper";
@@ -77,7 +77,8 @@ export const Proposals = () => {
         },
         {
           onSuccess: () => {
-            navigate(`/loan-apps/${currentLoan?.applicationId}/car-info`);
+            notification.success({ message: translate("car-info_sent") });
+            navigate("/loan-apps");
           },
         },
       );
