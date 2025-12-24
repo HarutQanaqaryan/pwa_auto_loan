@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { MainContext } from "./MainContext";
-import { LoanParamsType, ProposalType } from "./types";
+import { LoanParamsType } from "./types";
+import { ProposalType } from "../../types";
 
 export const MainProvider = ({ children }: { children: ReactNode }) => {
   const [currentLoan, setCurrentLoan] = useState<LoanParamsType>({});
