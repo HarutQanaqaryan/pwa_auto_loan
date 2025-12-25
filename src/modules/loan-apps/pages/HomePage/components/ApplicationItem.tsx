@@ -41,10 +41,6 @@ export const ApplicationItem = ({ loan }: { loan: LoanParamsType; index: number 
   const onSetCurrentLoan = () => {
     setCurrentLoan(loan);
     switch (loan?.data?.status) {
-      case CreditApplicationStatusType.SUBMITTED:
-      case CreditApplicationStatusType.DRAFT:
-        navigate("/loan-apps/new");
-        break;
       case CreditApplicationStatusType.WAIT_PROPOSAL_ACCEPT:
         navigate(`/loan-apps/proposals/${loan?.applicationId}`);
         break;
@@ -64,9 +60,9 @@ export const ApplicationItem = ({ loan }: { loan: LoanParamsType; index: number 
     case CreditApplicationStatusType.DRAFT:
     case undefined:
       return (
-        <StyledCard actions={[<Button onClick={onSetCurrentLoan}>{translate("go_to_application")}</Button>]}>
+        <StyledCard>
           <Title level={4} style={{ margin: 0 }}>
-            <StyledTag color={"blue"}>
+            <StyledTag color={"processing"}>
               <ClockCircleOutlined /> {translate("application_sent")}
             </StyledTag>
           </Title>
@@ -132,7 +128,7 @@ export const ApplicationItem = ({ loan }: { loan: LoanParamsType; index: number 
       return (
         <StyledCard>
           <Title level={4} style={{ margin: 0 }}>
-            <StyledTag color={"red"}>
+            <StyledTag color={"processing"}>
               <ClockCircleOutlined /> {translate("in_progress")}
             </StyledTag>
           </Title>
