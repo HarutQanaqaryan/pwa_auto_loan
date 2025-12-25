@@ -1,9 +1,9 @@
 import { Card, Form, Input, Button, notification, Spin } from "antd";
 import { useEffect } from "react";
 import { useTranslate } from "@common/hooks";
-import { useFormRules, usePostEvent, useSendCarInfo } from "../../../hooks";
-import { CarInfoDataType, EventType, useMainContext } from "../../../contexts";
-import { ActionsWrapper } from "../../ActionsWrapper";
+import { useFormRules, usePostEvent, useSendCarInfo } from "../../hooks";
+import { CarInfoDataType, EventType, useMainContext } from "../../contexts";
+import { ActionsWrapper } from "../ActionsWrapper";
 import { useNavigate } from "react-router-dom";
 
 export const CarInfo = () => {

@@ -1,20 +1,19 @@
-import { Card, Typography, Button, Descriptions } from "antd";
+import { Card, Typography, Button, Checkbox } from "antd";
 import { EventType, useMainContext } from "../../contexts";
 import { ActionsWrapper } from "../ActionsWrapper";
 import { useTranslate } from "@common/hooks";
 import { useNavigate } from "react-router-dom";
 import { usePostEvent } from "../../hooks";
-import { ProposalType } from "modules/loan-apps/types";
+import { useState } from "react";
 
 const { Title } = Typography;
 
 export const AcceptLoan = () => {
-  const { translate, formatNumber } = useTranslate();
+  const { translate } = useTranslate();
   const { currentLoan } = useMainContext();
+  const [agree, setAgree] = useState(false);
   const navigate = useNavigate();
   const { postEvent } = usePostEvent();
-
-  const proposal = {} as ProposalType;
 
   const onSendDecision = () => {
     if (!currentLoan?.applicationId) {
@@ -37,21 +36,11 @@ export const AcceptLoan = () => {
       <Title level={5} style={{ marginBottom: 24 }}>
         {translate("step7.review")}
       </Title>
-
-      <Descriptions bordered column={1} style={{ marginBottom: 24 }}>
-        <Descriptions.Item label={translate("step7.loanAmount")}>
-          {formatNumber(proposal?.approvedSum || 0)} ₽
-        </Descriptions.Item>
-        <Descriptions.Item label={translate("step7.interestRate")}>
-          {proposal?.approvedInterestRate ?? 0} %
-        </Descriptions.Item>
-        <Descriptions.Item label={translate("step7.term")}>
-          {proposal?.proposalPeriod ?? 0} {translate("step7.term").toLowerCase().includes("term") ? "months" : "мес."}
-        </Descriptions.Item>
-      </Descriptions>
-
+      <Checkbox value={agree} onChange={(e) => setAgree(e.target.checked)}>
+        {translate("im_agree")}
+      </Checkbox>
       <ActionsWrapper>
-        <Button type="primary" onClick={onSendDecision}>
+        <Button type="primary" disabled={!agree} onClick={onSendDecision}>
           {translate("step7.accept")}
         </Button>
       </ActionsWrapper>

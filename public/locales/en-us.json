@@ -376,5 +376,6 @@
   "go_to": "Go",
   "bank_waiting_consent": "The bank is waiting for consent",
   "in_progress": "In progress",
-  "success": "Success"
+  "success": "Success",
+  "im_agree": "I agree with the terms of the car loan"
 }

@@ -1,11 +1,11 @@
 import { Card, List, Typography, Space, Tag, Button, Select, notification } from "antd";
-import { EventType, useMainContext } from "../../../contexts";
+import { EventType, useMainContext } from "../../contexts";
 import { useTranslate } from "@common/hooks";
-import { ActionsWrapper } from "../../ActionsWrapper";
+import { ActionsWrapper } from "../ActionsWrapper";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useState } from "react";
-import { useGetProposals, usePostEvent } from "../../../hooks";
+import { useGetProposals, usePostEvent } from "../../hooks";
 
 const { Title } = Typography;
 
