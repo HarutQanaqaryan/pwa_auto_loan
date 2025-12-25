@@ -41,7 +41,7 @@ const getApplicationsList = async (userId: string) => {
 
 const getProposalsList = async (appId: string) => {
   const { data } = await axiosProposalInstance.request<ProposalType[]>({
-    url: `/proposals/${appId}`,
+    url: `/proposals/?applicationId=${appId}`,
     method: "GET",
   });
 
