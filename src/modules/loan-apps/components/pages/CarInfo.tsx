@@ -28,7 +28,7 @@ export const CarInfo = () => {
     if (loanParams?.applicationId) {
       const applicationId = loanParams?.applicationId;
       mutate(
-        { applicationId: applicationId, data: params },
+        { applicationId: applicationId, carInfo: params },
         {
           onSuccess: () => {
             postEvent({ id: applicationId, type: EventType.CAR_INFO, result: "OK" });

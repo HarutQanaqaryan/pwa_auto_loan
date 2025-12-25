@@ -58,7 +58,7 @@ export type CarInfoDataType = {
 };
 
 export type CarInfoType = {
-  data: CarInfoDataType;
+  carInfo: CarInfoDataType;
   applicationId: string;
 };
 
@@ -72,7 +72,6 @@ export type PostEventsType = {
   id: string;
   type: EventType;
   result: string;
-  data?: unknown;
 };
 
 export type FormType = Record<string, string | boolean | ProposalType>;
