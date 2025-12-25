@@ -66,7 +66,7 @@ export const useGetApplicationsList = () => {
     },
   );
 
-  return { applications: applications?.filter((el) => el?.data && el?.data?.status), isLoading };
+  return { applications, isLoading };
 };
 
 export const usePostApplication = () => {

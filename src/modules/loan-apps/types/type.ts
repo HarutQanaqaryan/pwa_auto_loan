@@ -8,13 +8,11 @@ export type StatusType = {
 export type ProposalType = {
   proposalId: string;
   applicationId: string;
-  productId: string;
   approvedSum: number;
   currency: string;
   approvedRepaymentPeriod: number;
   approvedInterestRate: number;
   proposalPeriod: number;
-  proposalDate: string;
 };
 
 export type ProcessInstanceType = {

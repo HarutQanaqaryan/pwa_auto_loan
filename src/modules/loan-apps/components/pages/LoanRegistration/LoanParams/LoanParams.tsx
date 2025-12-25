@@ -15,8 +15,8 @@ export const LoanParams: FC<LoanParamsType> = ({ setCurrentStep, disabledForm })
   const { currentLoan, onSaveLoanParams } = useMainContext();
 
   useEffect(() => {
-    form.setFieldsValue(currentLoan?.data?.loanParams);
-  }, [form, currentLoan?.data?.loanParams]);
+    form.setFieldsValue(currentLoan?.loanParams);
+  }, [form, currentLoan?.loanParams]);
 
   return (
     <Form

@@ -20,8 +20,8 @@ export const LoanRegistration = () => {
 
   const stepComponent = useMemo(() => {
     const disabledForm =
-      currentLoan?.data?.status === CreditApplicationStatusType.SUBMITTED ||
-      currentLoan?.data?.status === CreditApplicationStatusType.DRAFT;
+      currentLoan?.status === CreditApplicationStatusType.SUBMITTED ||
+      currentLoan?.status === CreditApplicationStatusType.DRAFT;
     switch (currentStep) {
       case 1:
         return <LoanParams setCurrentStep={setCurrentStep} disabledForm={disabledForm} />;

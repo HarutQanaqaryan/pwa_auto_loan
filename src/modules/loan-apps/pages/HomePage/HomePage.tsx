@@ -53,10 +53,7 @@ export const HomePage = () => {
     () =>
       applications?.map((app) => ({
         ...app,
-        data: {
-          ...app.data,
-          status: app?.applicationId ? (statusMap[app?.applicationId] ?? app?.data?.status) : app?.data?.status,
-        },
+        status: app?.applicationId ? (statusMap[app?.applicationId] ?? app?.status) : app?.status,
       })) as LoanParamsType[],
     [applications, statusMap],
   );

@@ -30,25 +30,23 @@ export interface PersonalInfoType {
   registrationAddress?: string;
 }
 export interface LoanParamsType {
-  data?: {
-    personalInfo?: PersonalInfoType;
-    loanParams?: {
-      loanPurpose: string;
-      loanAmount: number;
-      creditProgram: string;
-      loanTerm: number;
-      downPayment: number;
-    };
-    employmentIncome?: {
-      employerName?: string;
-      employmentType: string;
-      employerInn: string;
-      position: string;
-      workExperience: number;
-      monthlyIncome: number;
-    };
-    status?: CreditApplicationStatusType;
+  personalInfo?: PersonalInfoType;
+  loanParams?: {
+    loanPurpose: string;
+    loanAmount: number;
+    creditProgram: string;
+    loanTerm: number;
+    downPayment: number;
   };
+  employmentIncome?: {
+    employerName?: string;
+    employmentType: string;
+    employerInn: string;
+    position: string;
+    workExperience: number;
+    monthlyIncome: number;
+  };
+  status?: CreditApplicationStatusType;
   applicationId?: string;
 }
 

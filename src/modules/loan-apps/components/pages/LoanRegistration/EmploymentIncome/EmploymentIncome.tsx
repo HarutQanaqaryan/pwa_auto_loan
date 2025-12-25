@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslate } from "@common/hooks";
 import { useAuthContext } from "@common/auth";
 import { usePostApplication, useRunLoanBp } from "../../../../hooks";
-import { CreditApplicationStatusType, useMainContext } from "../../../../contexts";
+import { useMainContext } from "../../../../contexts";
 import { ActionsWrapper } from "../../../ActionsWrapper";
 
 interface EmploymentIncomeType {
@@ -48,16 +48,16 @@ export const EmploymentIncome: FC<EmploymentIncomeType> = ({ setCurrentStep, dis
 
   const sendLoanApplication = useCallback(() => {
     const loanParams = {
-      ...currentLoan?.data,
+      ...currentLoan,
       employmentIncome: form.getFieldsValue(),
-      status: CreditApplicationStatusType.SUBMITTED,
     };
 
     const requestObject = {
-      data: loanParams,
+      ...loanParams,
       userId: profile?.userId || "",
       applicationId: crypto.randomUUID(),
     };
+
     mutate(requestObject, {
       onSuccess: startBp,
       onError: () => notification.error({ message: translate("failed_start_bp") }),
@@ -65,8 +65,8 @@ export const EmploymentIncome: FC<EmploymentIncomeType> = ({ setCurrentStep, dis
   }, [mutate, profile?.userId, currentLoan, form, startBp, translate]);
 
   useEffect(() => {
-    form.setFieldsValue(currentLoan?.data?.employmentIncome);
-  }, [form, currentLoan?.data?.employmentIncome]);
+    form.setFieldsValue(currentLoan?.employmentIncome);
+  }, [form, currentLoan?.employmentIncome]);
 
   return (
     <Spin spinning={isLoading}>

@@ -57,10 +57,6 @@ export const Proposals = () => {
     },
   ];
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString("ru-RU");
-  };
-
   const getPeriodText = (period: number) => {
     return `${period} ${translate("proposal.period.months")}`;
   };
@@ -108,10 +104,6 @@ export const Proposals = () => {
 
                   <Tag color="orange">
                     {translate("proposal.proposalPeriod")}: {getPeriodText(proposal?.proposalPeriod)}
-                  </Tag>
-
-                  <Tag color="purple">
-                    {translate("proposal.proposalDate")}: {formatDate(proposal?.proposalDate)}
                   </Tag>
                 </StyledSpace>
               }

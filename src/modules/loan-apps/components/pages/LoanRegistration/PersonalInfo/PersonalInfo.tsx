@@ -17,13 +17,13 @@ export const PersonalInfo: FC<PersonalInfoType> = ({ setCurrentStep, disabledFor
   const { currentLoan, onSaveLoanParams } = useMainContext();
 
   useEffect(() => {
-    const birthDate = currentLoan?.data?.personalInfo?.birthDate;
+    const birthDate = currentLoan?.personalInfo?.birthDate;
     const formData = {
-      ...currentLoan?.data?.personalInfo,
-      birthDate: birthDate ? dayjs(currentLoan?.data?.personalInfo?.birthDate) : void 0,
+      ...currentLoan?.personalInfo,
+      birthDate: birthDate ? dayjs(currentLoan?.personalInfo?.birthDate) : void 0,
     };
     form.setFieldsValue(formData);
-  }, [form, currentLoan?.data?.personalInfo]);
+  }, [form, currentLoan?.personalInfo]);
 
   return (
     <Form

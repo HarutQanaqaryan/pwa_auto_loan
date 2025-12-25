@@ -21,10 +21,10 @@ export const AppInfo: FC<AppInfoType> = ({ loan }) => {
   return (
     <StyledTag color={"grey"}>
       <span>
-        {translate("step1.loanAmount")}: {formatNumber(loan?.data?.loanParams?.loanAmount ?? 0)}
+        {translate("step1.loanAmount")}: {formatNumber(loan?.loanParams?.loanAmount ?? 0)}
       </span>
       <span>
-        {translate("step7.term")}: {formatNumber(loan?.data?.loanParams?.loanTerm ?? 0)}{" "}
+        {translate("step7.term")}: {formatNumber(loan?.loanParams?.loanTerm ?? 0)}{" "}
         {translate("step7.term").toLowerCase().includes("term") ? "months" : "месяцев"}
       </span>
     </StyledTag>

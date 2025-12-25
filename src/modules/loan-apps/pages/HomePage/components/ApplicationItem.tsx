@@ -40,7 +40,7 @@ export const ApplicationItem = ({ loan }: { loan: LoanParamsType; index: number 
 
   const onSetCurrentLoan = () => {
     setCurrentLoan(loan);
-    switch (loan?.data?.status) {
+    switch (loan?.status) {
       case CreditApplicationStatusType.WAIT_PROPOSAL_ACCEPT:
         navigate(`/loan-apps/proposals/${loan?.applicationId}`);
         break;
@@ -55,10 +55,8 @@ export const ApplicationItem = ({ loan }: { loan: LoanParamsType; index: number 
     }
   };
 
-  switch (loan?.data?.status) {
+  switch (loan?.status) {
     case CreditApplicationStatusType.SUBMITTED:
-    case CreditApplicationStatusType.DRAFT:
-    case undefined:
       return (
         <StyledCard>
           <Title level={4} style={{ margin: 0 }}>
