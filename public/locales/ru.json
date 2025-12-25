@@ -373,5 +373,7 @@
   "carinfo_status": "Заполните информацию об автомобиле",
   "fill": "Заполнить",
   "go_to": "Перейти",
-  "bank_waiting_consent": "Банк ожидает согласия"
+  "bank_waiting_consent": "Банк ожидает согласия",
+  "in_progress": "В процессе",
+  "success": "Готово"
 }

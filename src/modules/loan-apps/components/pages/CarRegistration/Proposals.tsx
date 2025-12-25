@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useState } from "react";
 import { useGetProposals, usePostEvent } from "../../../hooks";
-import { ProposalType } from "../../../types";
 
 const { Title } = Typography;
 
@@ -66,14 +65,13 @@ export const Proposals = () => {
     return `${period} ${translate("proposal.period.months")}`;
   };
 
-  const onSelectProposal = (proposal: ProposalType) => {
+  const onSelectProposal = () => {
     if (currentLoan?.applicationId) {
       postEvent(
         {
           id: currentLoan?.applicationId,
           type: EventType.USER_ACCEPT1,
           result: "OK",
-          data: { ...proposal, signType: selectedSignType },
         },
         {
           onSuccess: () => {
@@ -100,7 +98,6 @@ export const Proposals = () => {
                   <span style={{ fontSize: 18, fontWeight: "bold" }}>
                     {formatNumber(proposal?.approvedSum)} {proposal?.currency}
                   </span>
-
                   <Tag color="blue">
                     {translate("proposal.approvedInterestRate")}: {proposal?.approvedInterestRate}%
                   </Tag>
@@ -123,7 +120,7 @@ export const Proposals = () => {
             />
             <BtnsWrapper>
               <Select options={signingOptions} value={selectedSignType} onChange={setSelectedSignType} />
-              <Button type="primary" onClick={() => onSelectProposal(proposal)}>
+              <Button type="primary" onClick={() => onSelectProposal()}>
                 {translate("step3.select")}
               </Button>
             </BtnsWrapper>

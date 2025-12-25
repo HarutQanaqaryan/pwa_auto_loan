@@ -2,7 +2,13 @@ import { useNavigate } from "react-router-dom";
 
 import { useTranslate } from "@common/hooks";
 
-import { ClockCircleOutlined, FileTextOutlined, SignatureOutlined } from "@ant-design/icons";
+import {
+  CheckCircleOutlined,
+  ClockCircleOutlined,
+  FileTextOutlined,
+  SignatureOutlined,
+  StopOutlined,
+} from "@ant-design/icons";
 import { Button, Card, Tag, Typography } from "antd";
 
 import { CreditApplicationStatusType, useMainContext, type LoanParamsType } from "../../../contexts";
@@ -106,6 +112,39 @@ export const ApplicationItem = ({ loan }: { loan: LoanParamsType; index: number 
           <Title level={4} style={{ margin: 0 }}>
             <StyledTag color={"red"}>
               <SignatureOutlined /> {translate("carinfo_status")}
+            </StyledTag>
+          </Title>
+          <AppInfo loan={loan} />
+        </StyledCard>
+      );
+    case CreditApplicationStatusType.REJECT:
+      return (
+        <StyledCard>
+          <Title level={4} style={{ margin: 0 }}>
+            <StyledTag color={"red"}>
+              <StopOutlined /> {translate("loanApps.applicationStatus.reject")}
+            </StyledTag>
+          </Title>
+          <AppInfo loan={loan} />
+        </StyledCard>
+      );
+    case CreditApplicationStatusType.IN_PROGRESS:
+      return (
+        <StyledCard>
+          <Title level={4} style={{ margin: 0 }}>
+            <StyledTag color={"red"}>
+              <ClockCircleOutlined /> {translate("in_progress")}
+            </StyledTag>
+          </Title>
+          <AppInfo loan={loan} />
+        </StyledCard>
+      );
+    case CreditApplicationStatusType.SUCCESS:
+      return (
+        <StyledCard>
+          <Title level={4} style={{ margin: 0 }}>
+            <StyledTag color={"green"}>
+              <CheckCircleOutlined /> {translate("success")}
             </StyledTag>
           </Title>
           <AppInfo loan={loan} />

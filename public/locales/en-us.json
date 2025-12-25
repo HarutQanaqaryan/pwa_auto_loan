@@ -374,5 +374,7 @@
   "carinfo_status": "Fill in your vehicle information",
   "fill": "Fill",
   "go_to": "Go",
-  "bank_waiting_consent": "The bank is waiting for consent"
+  "bank_waiting_consent": "The bank is waiting for consent",
+  "in_progress": "In progress",
+  "success": "Success"
 }
