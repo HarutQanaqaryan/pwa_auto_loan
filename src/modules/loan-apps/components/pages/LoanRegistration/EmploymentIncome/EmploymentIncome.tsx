@@ -36,7 +36,7 @@ export const EmploymentIncome: FC<EmploymentIncomeType> = ({ setCurrentStep, dis
           {
             onSuccess: () => {
               notification.success({ message: translate("application_sent") });
-              navigate("/loan-apps");
+              setTimeout(() => navigate("/loan-apps"), 1000);
             },
             onError: () => notification.error({ message: translate("failed_start_bp") }),
           },

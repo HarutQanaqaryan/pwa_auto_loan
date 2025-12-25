@@ -63,6 +63,9 @@ export const useGetApplicationsList = () => {
     {
       retry: false,
       useErrorBoundary: false,
+      staleTime: 0,
+      cacheTime: 0,
+      refetchOnMount: "always",
     },
   );
 
