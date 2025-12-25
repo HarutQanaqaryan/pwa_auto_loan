@@ -211,7 +211,7 @@
   "no_active_applications": "No active applications",
   "go_to_application": "Go to application",
   "go_to_proposals": "Go to proposals",
-  "application_sent": "The application has been sent. Expect notifications with proposals",
+  "application_sent": "Application sent",
   "car-info_sent": "The data has been submitted. Please wait for notification of the decision.",
 
   "page.title": "Submitting a loan application",
